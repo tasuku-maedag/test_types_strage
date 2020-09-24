@@ -27,15 +27,18 @@ body { background-color: #000; font-family: 'Helvetica Neue', Helvetica, Arial, 
 
 main { display: grid; place-items: center; width: 100vw; max-height: 100vh; overflow-y: scroll; scroll-snap-type: y proximity; z-index: 2; }
 
-section { width: 100%; min-height: 100vh; scroll-snap-align: start; z-index: 3; }
+section { position: sticky; top: 0; width: 100%; min-height: 100vh; scroll-snap-align: start; z-index: 3; }
+
+section p { font-size: 0.9rem; font-weight: 100; }
 
 section:nth-of-type(even) { background-color: #5fadf2; }
 
-#title { position: relative; display: flex; flex-direction: row; justify-content: center; align-items: center; padding: 5%; }
+/* ********************* <section id="title"> */
+#title { display: flex; flex-direction: row; justify-content: center; align-items: center; padding: 5%; }
 
 #title div { position: relative; top: 0; left: 0; width: 49%; height: 60vh; overflow: hidden; z-index: 4; }
 
-#title div p { font-size: 0.8rem; font-weight: 100; }
+#title h2, #title p { color: #fff; }
 
 #title div + div { padding-left: 5%; }
 
@@ -64,6 +67,38 @@ h1 svg polygon, h1 svg path { animation-name: titleAnm; animation-duration: 25s;
   80% { fill: #ef95ab; }
   100% { fill: #fff; } }
 
-h2, p { color: #fff; }
+/* ********************* <section id="corporatesite2020"> */
+#corporatesite2020 { background-color: #0c243f; overflow: hidden; }
 
-#test_type_list li a { outline: none; text-decoration: none; }
+#corporatesite2020 div { position: absolute; top: 20%; left: 5%; }
+
+#corporatesite2020 div h2 { color: #fcfaf2; font-size: 12rem; font-weight: 900; line-height: 9rem; margin-bottom: 2rem; }
+
+#corporatesite2020 div p { position: relative; top: 0; left: 0; color: #fcfaf2; padding-left: 5%; line-height: 5rem; }
+
+#corporatesite2020 div p a { position: absolute; top: 0; left: 50%; display: inline-block; color: #d99b75; font-size: 5rem; font-weight: 100; outline: none; overflow: hidden; text-align: right; text-decoration: none; }
+
+#corporatesite2020 div p a::before { position: absolute; bottom: 0; left: -100%; width: 100%; height: 1px; background-color: #d99b75; content: " "; transition-property: all; transition-duration: 500ms; transition-timing-function: ease-in; }
+
+#corporatesite2020 div p a:hover::before { left: 0; }
+
+/* ********************* <section id="engineers_demo_01"> */
+#engineers_demo_01 { display: flex; flex-direction: row-reverse; background-color: #fff; }
+
+#engineers_demo_01 .title { width: 70%; height: 100vh; background-color: #e472cb; padding: 4%; }
+
+#engineers_demo_01 .title h2 { color: #bfbfbf; font-size: 8rem; line-height: 7rem; }
+
+#engineers_demo_01 .title h3 { color: #e5e6bc; font-size: 2rem; font-weight: lighter; letter-spacing: 1px; line-height: 20rem; text-align: center; }
+
+#engineers_demo_01 .link { width: 30%; height: 100vh; background-color: #fff; padding: 2%; }
+
+#engineers_demo_01 .link p, #engineers_demo_01 .link aside { display: grid; place-items: center; position: relative; top: 0; left: 0; width: 100%; height: 28%; background-color: #999999; color: #fff; margin-bottom: 15%; padding: 5%; }
+
+#engineers_demo_01 .link p a, #engineers_demo_01 .link aside a { display: inline-block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 101%; height: 101%; background-color: #e472cb; outline: none; text-align: center; text-decoration: none; transition-property: all; transition-duration: 0.7s; transition-timing-function: ease-out; }
+
+#engineers_demo_01 .link p a span, #engineers_demo_01 .link aside a span { display: inline-block; height: 50%; color: #fff; font-weight: 300; font-size: 2rem; letter-spacing: 1px; margin-top: 25%; }
+
+#engineers_demo_01 .link p a:hover, #engineers_demo_01 .link aside a:hover { background-color: #fff; border-radius: 50%; }
+
+#engineers_demo_01 .link p a:hover span, #engineers_demo_01 .link aside a:hover span { color: #e472cb; }

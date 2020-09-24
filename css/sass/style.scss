@@ -26,18 +26,29 @@ main {
 }
 
 section {
+  position:sticky;
+  top:0;
   width:100%;
   min-height: 100vh;
   scroll-snap-align: start;
   z-index: 3;
+  p {
+    font-size: 0.9rem;
+    font-weight: 100;
+  }
+
 }
 section:nth-of-type(even) {
   background-color: #5fadf2;
 }
 
-// <section id="title">
+/* *********************
+  *********************
+  <section id="title">
+  *********************
+********************* */
 #title {
-  position: relative;;
+  //position: relative;;
   display:flex;
   flex-direction: row;
   justify-content: center;
@@ -52,11 +63,10 @@ section:nth-of-type(even) {
     //place-items: center;
     overflow: hidden;
     z-index: 4;
-      p {
-      font-size: 0.8rem;
-      font-weight: 100;
-    }
   }
+  h2,p {
+    color:#fff;
+  }  
   div + div {
     h2 {
       font-size: 1.2rem;
@@ -166,13 +176,144 @@ h1 {
   }
 }
 
-h2,p {
-  color:#fff;
+
+/* *********************
+  *********************
+  <section id="corporatesite2020">
+  *********************
+********************* */
+$kon: #0c243f;
+$siro:#fcfaf2;
+$cha:#d99b75;
+#corporatesite2020 {
+  //position: relative;
+  background-color:$kon;
+  overflow: hidden;
+  div {
+    position:absolute;
+    top:20%;
+    left:5%;
+    h2 {
+      color:$siro;
+      font-size:12rem;
+      font-weight: 900;
+      line-height:9rem;
+      margin-bottom:2rem;
+    }
+    p{
+      position:relative;
+      top:0;left:0;
+      color:$siro;
+      padding-left:5%;
+      line-height:5rem;
+      a {
+        position:absolute;
+        top:0;
+        left:50%;
+        display: inline-block;
+        color:$cha;
+        font-size:5rem;
+        font-weight: 100;
+        outline: none;
+        overflow: hidden;
+        text-align: right;
+        text-decoration: none;
+        &::before{
+          position: absolute;
+          bottom:0;left:-100%;
+          width:100%;
+          height:1px;
+          background-color: $cha;
+          content:" ";
+          transition-property: all;
+          transition-duration: 500ms;
+          transition-timing-function: ease-in;
+        }
+        &:hover::before{
+          left:0;
+        }
+
+      }
+    }
+  }
 }
 
-#test_type_list{
-  li a {
-    outline:none;
-    text-decoration: none;
+/* *********************
+  *********************
+  <section id="engineers_demo_01">
+  *********************
+********************* */
+#engineers_demo_01 {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #fff;
+  .title {
+    width:70%;
+    height:100vh;
+    background-color: #e472cb;
+    padding:4%;
+    h2 {
+      color:#bfbfbf;
+      font-size:8rem;
+      line-height:7rem;
+    }
+    h3 {
+      color:#e5e6bc;
+      font-size: 2rem;
+      font-weight: lighter;
+      letter-spacing: 1px;
+      line-height: 20rem;
+      text-align: center;
+    }
+  }
+  .link {
+    width:30%;
+    height:100vh;
+    background-color: #fff;
+    padding:2%;
+    p,aside {
+      display:grid;
+      place-items: center;
+      position:relative;
+      top:0;left:0;
+      width:100%;
+      height:28%;
+      background-color: #999999;
+      color:#fff;
+      margin-bottom:15%;
+      padding:5%;
+      a {
+        display:inline-block;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate( -50%, -50%);
+        width:101%;
+        height:101%;
+        background-color:#e472cb;
+        outline: none;
+        text-align: center;
+        text-decoration: none;
+          transition-property:all;
+          transition-duration: 0.7s;
+          transition-timing-function: ease-out;
+        span {
+          display:inline-block;
+          height:50%;
+          color:#fff;
+          font-weight: 300;
+          font-size: 2rem;
+          letter-spacing: 1px;
+          margin-top:25%;
+        }
+        &:hover {
+          background-color: #fff;
+          border-radius: 50%;
+          span{
+            color:#e472cb;
+          }
+        }
+      }
+    }
   }
 }
