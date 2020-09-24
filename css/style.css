@@ -1,0 +1,69 @@
+/* compile to style.css */
+*, *::before, *::after { box-sizing: border-box; }
+
+ul[class], ol[class] { padding: 0; }
+
+body, h1, h2, h3, h4, p, ul[class], ol[class], figure, blockquote, dl, dd { margin: 0; }
+
+html { scroll-behavior: smooth; }
+
+body { min-height: 100vh; text-rendering: optimizeSpeed; line-height: 1.5; }
+
+ul[class], ol[class] { list-style: none; }
+
+a:not([class]) { text-decoration-skip-ink: auto; }
+
+img, picture { max-width: 100%; display: block; }
+
+article > * + * { margin-top: 1em; }
+
+input, button, textarea, select { font: inherit; }
+
+img:not([alt]) { filter: blur(10px); }
+
+@media (prefers-reduced-motion: reduce) { * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
+
+body { background-color: #000; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; z-index: 1; }
+
+main { display: grid; place-items: center; width: 100vw; max-height: 100vh; overflow-y: scroll; scroll-snap-type: y proximity; z-index: 2; }
+
+section { width: 100%; min-height: 100vh; scroll-snap-align: start; z-index: 3; }
+
+section:nth-of-type(even) { background-color: #5fadf2; }
+
+#title { position: relative; display: flex; flex-direction: row; justify-content: center; align-items: center; padding: 5%; }
+
+#title div { position: relative; top: 0; left: 0; width: 49%; height: 60vh; overflow: hidden; z-index: 4; }
+
+#title div p { font-size: 0.8rem; font-weight: 100; }
+
+#title div + div { padding-left: 5%; }
+
+#title div + div h2 { font-size: 1.2rem; font-weight: normal; letter-spacing: 0.1rem; margin-bottom: 1rem; }
+
+#title div + div::before, #title div + div::after { display: block; position: absolute; top: 0; left: 0; width: 1px; background-color: transparent; content: " "; animation-name: titleSectionBorder; animation-iteration-count: infinite; z-index: 100; }
+
+#title div + div::before { height: 90%; animation-duration: 10s; }
+
+#title div + div::after { animation-delay: 5s; height: 90%; animation-duration: 10s; }
+
+@keyframes titleSectionBorder { 0% { transform: translateY(-100%);
+    background-color: #fff; }
+  100% { transform: translateY(110%); } }
+
+h1 { color: #fff; font-weight: 100; letter-spacing: 0.05rem; text-align: center; }
+
+h1 svg { display: block; transform: scale(0.5); fill: #707c7e; }
+
+h1 svg polygon, h1 svg path { animation-name: titleAnm; animation-duration: 25s; animation-iteration-count: infinite; }
+
+@keyframes titleAnm { 0% { fill: #fff; }
+  30% { fill: #a6edbc; }
+  50% { fill: #5fadf2; }
+  60% { fill: #cbb3c9; }
+  80% { fill: #ef95ab; }
+  100% { fill: #fff; } }
+
+h2, p { color: #fff; }
+
+#test_type_list li a { outline: none; text-decoration: none; }
