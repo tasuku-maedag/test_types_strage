@@ -1,0 +1,720 @@
+@charset "utf-8";
+
+/*
+2020のメディアクエリについて。。。
+For Mobile が 768px 以下 (タブレット以下はの場合はモバイルデザイン画面)
+For PC が 769px 以上
+@media ( width <= 768px ) {
+  // For Mobile
+}
+@media ( 769px <= width ) {
+  // For PC
+}
+ */
+
+@import "button";
+@import "color_variables";
+@import "font_variables";
+
+* {
+  /* google fonts */
+  font-family: 'Noto Sans JP', sans-serif;
+  /* adobe fonts  */
+  //font-family: source-han-sans-japanese, din-2014-narrow, sans-serif;
+}
+
+body {
+  position: relative;
+  top:0;
+  left:0;
+  // padding-left:3rem;
+  padding-left:20%;
+}
+
+@mixin bodyAnimationProp() {
+  animation-duration:1.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(.22,1.11,.95,1);
+}
+body.body-slide-close {
+  animation-name: bodySlideClose;
+  @include bodyAnimationProp();
+}
+body.body-slide-open {
+  animation-name: bodySlideOpen;
+  @include bodyAnimationProp();
+}
+
+// <header,> toggling animation
+@keyframes bodySlideClose {
+  from {padding-left: 20%;}
+  to {padding-left: 0;}
+}
+@keyframes bodySlideOpen {
+  from {padding-left: 0;}
+  to {padding-left: 20%;}
+}
+
+
+/* ***********
+  Layout Elements
+
+  01. header
+  02. footer
+   ********** */
+
+/* ****
+  01. header is put on left side of page(window)
+  **** */
+header {
+  position: fixed ;
+  top: 0;
+  left: 0;
+/*
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+*/
+  width:20%;
+  height:100%;
+
+  background-color:$sironeri;
+  z-index:1002;
+  color:$kon;
+  //overflow:hidden;
+  /* header iocons */
+  // for mock up style
+  .headerIcon{
+    display: block;
+    content: " ";
+    background-color: $sironeri;
+    width:1.5rem;
+    height:1.5rem;
+    margin: 0.5rem auto 0.5rem auto;
+  }
+  a {
+    // color:$sironeri;
+    color:$kon;
+    text-decoration:none;
+  }
+
+}// end of header cascading
+
+  /* **************
+   header slide in Animation setting WHEN Page had loading.
+   ************** */
+  header.slidein {
+    // header slide in animation setting
+    animation-name:headerSlidein;
+    animation-duration:1.4s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(.22,1.11,.95,1);
+  }
+  // header block slide in animation keyframe
+  @keyframes headerSlidein {
+    from {
+      transform:translateX(-100%);
+    }
+    to {
+      transform:translateX(0%);
+    }
+  }
+
+// *****************
+// **** ＜ header toggel ui ****
+// *****************
+#headerCloser {
+  position:absolute;
+    top:1.2rem;
+    left:1rem;
+  display: inline-block;
+  content:" ";
+  color:transparent;
+  cursor:pointer;
+  width:0.8rem;
+  height:0.8rem;
+  border-top: 1px solid $sirocha;
+  border-left: 1px solid $sirocha;
+  transform:rotateZ(-45deg);
+}
+  // when click (or tap) #headerCloser,
+  // below class ".hdr-close" is add to <header> className.
+  header.hdr-close {
+    // header slide in animation setting
+    animation-name: headerClosing;
+    animation-duration:1s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(.22,1.11,.95,1);
+  }
+  // header block slide out animation keyframe
+  @keyframes headerClosing {
+    from {
+      transform:translateX(0%);
+    }
+    to {
+      transform:translateX(-90%);
+    }
+  }
+
+#headerOpener {
+  position:absolute;
+    top:0;
+    right:0;
+  display: none;
+  width:13%;
+  height:100%;
+  background-color: transparent;
+  box-sizing: border-box;
+  cursor:pointer;
+
+  &::after {
+    display:inline-block;
+    width:0.8rem;
+    height:0.8rem;
+    content:" ";
+    color:transparent;
+    cursor:pointer;
+    border-top: 1.4px solid $sirocha;
+    border-right: 1.4px solid $sirocha;
+    transform:rotateZ(45deg);
+  }
+
+} // #headerOpener
+
+#closed-icon {
+  display:block;
+  position:fixed;
+  top:0;
+  left:1%;
+  width:90px;
+  height:90px;
+  z-index:1000; // back of <header>
+  // single-m icon
+  svg {
+    opacity:0.7;
+    transform: scale(0.6);
+    path,rect {fill:#0c243f;}
+  }
+
+}
+
+// When <header> is hideen, #headerOpener is showing.
+.hdr-close #headerOpener{
+  display:grid;
+  place-items: center;
+}
+
+// when click (or tap) #headerOpener,
+// below animation class ".hdr-open" is add to <header> className.
+header.hdr-open {
+  // header slide in animation setting
+  animation-name: headerOpening;
+  animation-duration:1s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(.22,1.11,.95,1);
+}
+// header block slide out animation keyframe
+@keyframes headerOpening {
+  from {
+    transform:translateX(-90%);
+  }
+  to {
+    transform:translateX(0%);
+  }
+}
+
+
+
+// sitemap, and privacy policy, sns links ...
+#otherlinks {
+  position:absolute;
+  bottom:5%;
+  font-size: $smallFontSize;
+  font-weight: lighter;
+  padding:0.7rem 0.7rem 0.7rem 3rem;
+  li{
+    line-height:1.2rem;
+  }
+  .copyright{
+    line-height: 2rem;
+  }
+}
+
+/* h1 is userd for company name font-family */
+h1 {
+  position:relative;
+  font-size:0.9em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  line-height: 5rem;
+  margin-top:20%;
+  margin-bottom:4rem;
+  //margin: 1rem auto;
+  // writing-mode: vertical-rl;
+  text-align:center;
+  vertical-align: middle;
+  /* corporate logo */
+  svg {
+    display: inline-block;
+    width:5rem;
+    height:5rem;
+    //margin-right:0.5rem;
+    margin-left:-1rem;
+    padding:0;
+    vertical-align: middle;
+      fill:#b99d75;
+      stroke-dasharray: 3500;
+      stroke-dashoffset: 0;
+      stroke-width: 1;
+      animation: symbolanimation 3s ease-in 0s;
+  }
+}
+  /* corporate logo
+  h1::before {
+    display: inline-block;
+    content: " ";
+    //background-color: #b99d75;
+    width:3rem;
+    height:3rem;
+    //background-image: url('../img/svg/SingleM-Logo-Icon.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right:0.5rem;
+    // margin-bottom:0.5rem;
+    vertical-align: middle;
+  }*/
+
+  /* svg cascading style */
+  @keyframes symbolanimation {
+    0% {
+      stroke:#b99b75;
+      stroke-dashoffset: 3500;
+      fill:transparent;
+    }
+    30% {
+      stroke:#c7ae8a;
+    }
+    50% {
+      stroke:#eee5d5;
+    }
+    60% {
+      stroke-dashoffset: 2500;
+   }
+    80% {
+      //transform:translateX(-5%);
+      stroke-dashoffset: 800;
+    }
+    100% {
+      stroke:transparent;
+      //transform:translateX(-500%);
+    }
+  }
+
+// header style
+/*
+header.loaded {
+ width:3rem;
+ height:100%;
+ background-color: rgba(12, 36, 62, 0.9);
+}
+*/
+
+@mixin smallheaderstyle() {
+  width:3rem;
+  height:auto;
+  background: rgb(12,36,63);
+  background: linear-gradient(180deg, rgba(12,36,63,1) 0%, rgba(12,36,63,0) 90%);
+}
+
+header.scrolled {
+  @include smallheaderstyle();
+}
+header.small {
+  @include smallheaderstyle();
+  h1 {
+    max-width:1.5rem;
+    max-height:1.5rem;
+    color:transparent;
+  }
+}
+
+
+/* ****
+  Navigation UI
+  navigation element put on right side and fixed position
+   **** */
+nav {
+  /*
+ position: fixed;
+ top: 0.5rem;
+ right: 2rem;
+ z-index: 1000;
+ */
+// background-color: transparent;
+ //background-color: rgba(12, 36, 62, 0.5);
+ //background-color: rgba(12, 36, 62, 0.7);
+ //color: $sironeri;
+ padding:0.7rem 0.7rem 0.7rem 3rem;
+
+   @mixin navigationFontStyle () {
+     display:inline-block;
+     font-size:$normalFontSize;
+     font-weight:lighter;
+     line-height: 1.5rem;
+     text-decoration: none;
+     vertical-align: middle;
+   }
+
+  .standardMenu {
+    z-index: 1010;
+    li {
+      position:relative;
+      text-align:left;
+    }
+    li.current::before {
+      position:absolute;
+      top:50%;
+      left:-1rem;
+      display: inline-block;
+      width:0.5rem;
+      height:0.5rem;
+      content:" ";
+      background-color: $kon;
+      border-radius: 0.5rem;
+      margin-top:-0.25rem;
+    }
+    /* ****
+      .drawerMenu Opener
+       **** */
+    .openServiceList {
+      position:relative;
+      cursor:pointer;
+    }
+    /*
+    .openServiceList::before {
+      display:inline-block;
+      content:"＜";
+      font-size:$smallFontSize;
+      margin-right:0.3rem;
+      vertical-align: middle;
+    }
+    */
+    .openServiceList::before {
+      position:absolute;
+      top:0;
+      right:-1rem;
+      display:inline;
+      content:"＞";
+      font-size:$smallFontSize;
+      //margin-left:0.3rem;
+      vertical-align: middle;
+    }
+
+    .openServiceList, a {
+     width:auto;
+     border-bottom:solid 1px transparent;
+     //color:$sironeri;
+     @include navigationFontStyle();
+    }
+  }
+  // pop up(drawer) menu
+  .drawerMenu {
+    position:absolute;
+    //top:-2rem;
+    top:0;
+    //right:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    // height:50%;
+    min-width:100%;
+    //border-bottom:solid 2px $sirocha;
+    overflow-y: hidden;
+    padding:1rem;
+    z-index: -1;
+    //z-index: 1009;
+    li {
+      text-align:left;
+    }
+    li:nth-of-type(1) {
+      margin-top:60%;
+    }
+    // pop up closer
+    .closer, dt, a {
+      @include navigationFontStyle();
+    }
+    .closer {
+      width:100%;
+      cursor: pointer;
+      // line-height: 2rem;
+      margin-bottom:1rem;
+      span {
+        display:inline-block;
+        font-size: 1rem;
+        margin-right:0.5rem;
+        vertical-align: baseline;
+          //transform: rotate(360deg);
+          //transition: transform 1s;
+      }
+    }
+    dl {
+      margin-bottom:0.5rem;
+      dt {
+        margin-bottom:0.5rem;
+      }
+      dd {
+        padding-left: 1rem;
+      }
+    }
+  } // drawerMenu
+
+} // nav
+
+//closer animation
+.closer-DegRight {
+  animation-name: closerDegRight;
+  animation-duration: .5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+.closer-DegLeft {
+  animation-name: closerDegRight;
+  animation-duration: .5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-direction: reverse;
+}
+@keyframes closerDegRight {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+nav.navyChar {
+  //background-color: rgba(252, 250, 242, 0.2);
+  background-color: $sironeri;
+  * {
+    color:$kon;
+  }
+  .drawerMenu {
+    //background-color: rgba(227, 225, 219, 0.5);
+    //background-color: $sironeri;
+    background: rgb(252,250,242);
+    background: linear-gradient(90deg, rgba(252,250,242,1) 53%, rgba(252,250,242,0.8547794117647058) 100%);
+  }
+}
+nav.whiteChar {
+  background-color: rgba(12, 36, 62, 0.5);
+  * {
+    color:$sironeri;
+  }
+  .drawerMenu {
+    background-color: rgba(12, 36, 62, 0.5);
+  }
+}
+
+/*
+ * Language switching link
+ */
+#languageSwitcher {
+  width:100%;
+  cursor:pointer;
+  margin-bottom: 2rem;
+  text-align:left;
+  .current {
+    border-bottom:2px solid $sirocha;
+  }
+}
+
+/*
+ * Contact Shortcut Function
+ */
+ @mixin menu_linkicon() {
+   display:inline-block;
+   width:1.5rem;
+   height:1.5rem;
+   background: url('../img/svg/Mail-navy.svg') 0 center no-repeat;
+   margin-right:1rem;
+   outline: none;
+   text-decoration: none;
+   vertical-align: middle;
+ }
+
+#contact_button {
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  padding: 1rem 0.7rem 0.7rem 3rem;
+  li {
+    display:block;
+    width:30%;
+    height:3rem;
+  }
+  li:nth-of-type(2) {
+    width:65%;
+  }
+}// end of #contact_button
+
+  #mail {
+    @include menu_linkicon();
+    background: url('../img/svg/Mail-navy.svg') 0 center no-repeat;
+  }
+  #telephone {
+    position:relative;
+    @include menu_linkicon();
+    background: url('../img/svg/Phone-navy.svg') 0 center no-repeat;
+    //cursor:pointer;
+  }
+    #telephone::before { // triangle
+      position:absolute;
+      top:55%;
+      left:100%;
+      display:block;
+      width:1rem;
+      height:1rem;
+      border-top:0.5rem solid transparent;
+      border-right:0.8rem solid $kon;
+      border-bottom:0.5rem solid transparent;
+      content:"";
+      margin-top:-0.5rem;
+      margin-left:1rem;
+      opacity: 0;
+      //visibility:hidden;
+        transition-property: all;
+        transition-duration: .15s;
+        transition-timing-function: ease-out;
+    }
+    #telephone::after { // box
+      position:absolute;
+      left:150%;
+      display:block;
+      width:100%;
+      height:2rem;
+      line-height: 1.8rem;
+      background-color:$kon;
+      //background-image: url('../img/svg/PhoneNumber-Shironeri.svg') 0 auto no-repeat;
+      background-size:cover;
+      border-radius: 5px;
+      color:$sironeri;
+      //content:url('../img/svg/PhoneNumber-Shironeri.svg');
+      content:attr(alt);
+      letter-spacing: 1px;
+      opacity: 0;
+      overflow: hidden;
+      text-align:center;
+      visibility:hidden;
+        transition-property: all;
+        transition-duration: .25s;
+        transition-timing-function: ease-out;
+    }
+    #telephone:hover::before {
+      margin-left: 0;
+      opacity:1;
+      visibility: visible;
+    }
+    #telephone:hover::after {
+      width:150px;
+      opacity:1;
+      visibility: visible;
+    }
+    #twitter {
+      @include menu_linkicon();
+      background: url('../img/svg/Twitter-navy.svg') 0 center no-repeat;
+/*      transition-duration: 1s;
+      transition-property: all;
+      transition-timing-function: ease-in;*/
+    }
+/*    #twitter:hover {
+      fill:#3ed3e2;
+    }*/
+    #instagram {
+      @include menu_linkicon();
+      background: url('../img/svg/Instagram-navy.svg') 0 center no-repeat;
+    }
+    #youtube {
+      @include menu_linkicon();
+      background: url('../img/svg/youtube-navy.svg') 0 center no-repeat;
+    }
+
+
+/* 02. footer always display */
+footer {
+  position:fixed;
+  right:0;
+  bottom:1%;
+  z-index:1001;
+  width:auto;
+  //width:100%;
+  //height:1.5rem;
+  line-height:1rem;
+  font-size:$smallFontSize;
+  padding: 1rem 2rem;
+
+   ul{
+     display:flex;
+      flex-direction: column;
+      justify-content: flex-end;
+//      align-items: center;
+      align-content: center;
+     width:100%;
+     margin: auto 0 auto auto ;
+   }
+     li {
+       display:inline-block;
+       color:$sironeri;
+       text-align: right;
+       vertical-align: middle;
+     }
+/*
+     li:nth-of-type(1),
+     li:nth-of-type(2),
+     li:nth-of-type(3),
+     li:nth-of-type(4),
+     li:nth-of-type(5),{
+       width:auto;
+       padding: 0 2rem;
+     }*/
+     li:nth-of-type(6){
+       //width:25%;
+       margin-top:1rem;
+     }
+     a {
+       color:$sironeri;
+       text-decoration:none;
+     }
+}
+footer.navyChar *{
+  color:$kon;
+}
+footer.whiteChar *{
+  color:$sironeri;
+}
+
+
+
+/* **********
+  Content and Text Elements
+  ********** */
+
+/* title font size */
+
+h2 {
+  font-size:$mainFontSize;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height:5rem;
+  margin-bottom: 1rem;
+/*  font-size:1.5rem;
+  line-height:2rem;*/
+}
+
+li {
+  list-style-type: none;
+}
+
+
+/* **********
+  parts
+  ********** */

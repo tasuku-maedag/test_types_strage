@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>株式会社 前田組 Prototype 2020.</title>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/common.min.css" />
+  <link rel="stylesheet" href="./css/page-style_front.min.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon/gold/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/gold/apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,700&display=swap&subset=japanese" rel="stylesheet" />
+  <!-- link rel="stylesheet" href="style.min.css" / -->
+
+  <!-- web font loading
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'ywl1kpi',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>-->
+
+</head>
+<body>
+
+  <!-- Corporate Name and Functionable Icons -->
+  <header class="slidein">
+
+    <span id="headerCloser"></span><!-- Header Closer Arrow which faces left -->
+    <span id="headerOpener"></span><!-- Header Opener Arrow which faces Right -->
+
+    <h1>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 199.42 199.42"><defs></defs><title>MaedaGumi,Inc.</title><g id="Single-M"><g id="Single-M-icon"><path id="type2" class="m-icon-path" d="M129,53a13.55,13.55,0,0,0-6.71,1.79L87.36,75V53.55h0a7.68,7.68,0,0,0-.09-1.22,10.21,10.21,0,0,0-.42-1.88A10.67,10.67,0,0,0,76.7,43.1a10.53,10.53,0,0,0-2.7.36,9.59,9.59,0,0,0-2.31.9l-17,9.6-.74.4A26.81,26.81,0,0,0,40.24,77.88a16.94,16.94,0,0,0,27,13.63v52.72a6.5,6.5,0,0,0,1.91,4.65l18.2,18.21V95.82l5.7-3.38h0l.51-.3a3,3,0,0,1,1.18-.41,1.72,1.72,0,0,1,1.71,1.71c0,.31,0,1,0,1h0v42.7a6.63,6.63,0,0,0,2,4.69v0l14.69,14.71v-76l6.54-3.87a1.55,1.55,0,0,1,.86-.23,1.7,1.7,0,0,1,1.7,1.7h0V123.2a6.65,6.65,0,0,0,1.9,4.65l0,0,18.28,18.17V66.5C142.46,58.19,136.45,53,129,53ZM63.49,88.49a10.54,10.54,0,0,1-9.68-6.43,4.16,4.16,0,0,1-.3-1.82,4,4,0,0,1,1.9-3.13l11.84-5.94V87.82A10.41,10.41,0,0,1,63.49,88.49Z"/></g></g></svg>
+      株式会社 前田組
+    </h1>
+
+    <!-- Navigation  画面遷移メニュー -->
+    <nav class="navyChar">
+
+      <ul class="standardMenu">
+        <li id="languageSwitcher" title="change view language"><span class="jp current">JP</span> / <span class="en">EN</span></li>
+        <li><a href="./about/about.html" class="mv_sirochaThinUnderLine">会社概要</a></li>
+        <li><a href="./announcement/announcement.html" class="mv_sirochaThinUnderLine">お知らせ</a></li>
+        <li><span class="openServiceList mv_sirochaThinUnderLine">事業紹介</span></li>
+        <li><a href="./blog/blog_list.html" class="mv_sirochaThinUnderLine">ブログ・SNS</a></li>
+        <li><a href="./recruitment_and_careers/recruitment.html" class="mv_sirochaThinUnderLine">採用情報</a></li>
+        <li><a href="./contact/select.html" class="mv_sirochaThinUnderLine">お問い合わせ</a></li>
+        <!-- li class="scrollAmt"></li --><!-- mock up -->
+      </ul>
+
+      <ul class="drawerMenu">
+        <li><span class="closer mv_sirochaThinUnderLine"><span>×</span>close</span>
+        <li>
+          <dl>
+            <dt>工事部門</dt>
+            <dd><a href="./services/civil_engineering/civil_engineering.html" class="mv_sirochaThinUnderLine">土木工事</a></dd>
+            <dd><a href="./services/cutter/cutter.html" class="mv_sirochaThinUnderLine">カッター工事</a></dd>
+            <dd><a href="./services/shaft_propulsion/shaft_propulsion.html" class="mv_sirochaThinUnderLine">立坑・推進工事</a></dd>
+          </dl>
+        </li>
+        <li><a href="./services/sustainable_energy/sustainable_energy.html" class="mv_sirochaThinUnderLine">再生可能エネルギー</a></li>
+        <li><a href="./services/residential_land/residential_land.html" class="mv_sirochaThinUnderLine">宅地開発・分譲</a></li>
+        <li><a href="./services/sento/sento.html" class="mv_sirochaThinUnderLine">銭湯</a></li>
+        <li><a href="./services/ikawa/ikawa.html" class="mv_sirochaThinUnderLine">伊川水郷（水の村）</a></li>
+      </ul>
+
+    </nav>
+
+    <ul id="contact_button">
+      <li><a id="mail" href="./contact/select.html"></a></li>
+      <li><span id="telephone" alt="0948-22-0633"></span></li>
+      <!-- SNS Icons -->
+      <li><a id="twitter" target="_blank" href="https://twitter.com/MaedaGumi_Inc"></a></li>
+      <li><a id="instagram" target="_blank" href="https://www.instagram.com/maedagumi.design/?hl=ja"></a></li>
+      <li><a id="youtube" target="_blank" href="https://www.youtube.com/channel/UCOfClXRQHXh3nsRuojgnw9g"></a></li>
+    </ul>
+
+    <ul id="otherlinks">
+      <li><a class="mv_sirochaThinUnderLine" href="#">サイトマップ</a></li>
+      <li><a class="mv_sirochaThinUnderLine" href="#">プライバシーポリシー</a></li>
+      <li class="copyright">&#169; 株式会社 前田組</li><!-- copy right -->
+    </ul>
+
+  </header>
+
+  <!-- M Icon for Link to HOME -->
+  <a id="closed-icon" href="#" alt="Maedagumi .Inc">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
+      <path d="M53.17,13.36a4.92,4.92,0,0,0-.47-2.13h0v0l0-.06a4.71,4.71,0,0,0-.34-.6A5.27,5.27,0,0,0,50.88,9.1a4.83,4.83,0,0,0-2.54-.83h-.27a5,5,0,0,0-1.73.31h0l-.28.11L26,16.65V12.49a2.45,2.45,0,0,0-3.4-2.27L6.37,16.65a1.29,1.29,0,0,0-.81,1.2v1.71l10.2-4v46l6.81-2.7A5.12,5.12,0,0,0,26,54V25.48A5.1,5.1,0,0,1,29,20.62l.34-.13h0V56.06l6.8-2.7a5.11,5.11,0,0,0,3.4-4.82V20.11h0v-.43a5.09,5.09,0,0,1,3.4-4.6V50.74l6.8-2.7a5.11,5.11,0,0,0,3.4-4.82V13.36Z"/>
+      <rect x="56.58" y="50.5" width="6.8" height="6.8"/>
+    </svg>
+  </a>
+
+
+  <!-- Block Of "top Of Page" Contents -->
+
+  <main>
+
+  <article id="topOfPage">
+
+    <!--
+    <video src="" autoplay muted></video>
+  -->
+    <video id="bg_video" src="./video/demo/background_mv_05_8_sample_5.mp4" muted loop></video>
+
+    <div class="topWrap">
+
+        <div id="titleOfTop" class="rellax" data-rellax-speed="3">
+          <h2>つくる、<br />ととのえる</h2>
+          <p>地域が一人ひとりが主人公になる。</p>
+          <p>
+          前田組は「ゆたかな暮らしを考える」ことを大切にしています。
+          暮らしをゆたかにする、そのためには全国の各地域それぞれの個性を表現、活かすことが大事だと捉え、
+          地域創生をテーマに様々な角度から事業を行っています。
+          </p>
+          <div>
+            <a href="./about/about.html" class="mv_underarrow-white">会社概要</a>
+          </div>
+        </div>
+
+        <!-- お知らせ -->
+        <div id="announcement">
+
+          <dl>
+            <dt>
+              <span class="annoucement__date">2020. 16. 10</span>
+              <h3 class="annoucement__title">
+                <a class="mv_sirochaUnderLine" href="./announcement/announcement.html#1130-2019-01">2020年末・2021年始 営業日のお知らせ</a>
+              </h3>
+            </dt>
+            <dd>今年もお世話になりました。前田組、年末年始の営業日のお知らせです。</dd>
+          </dl>
+
+          <!-- iteration sample -->
+          <dl>
+            <dt>
+              <span class="annoucement__date">2020. 15. 25</span>
+              <h3 class="annoucement__title">
+                <a class="mv_sirochaUnderLine" href="./announcement/announcement.html#1125-2019-01">鳥羽池桜ヶ丘　分譲開始しました</a>
+              </h3>
+            </dt>
+            <dd>飯塚市綱分にて、鳥羽池公園を展望する全NN区画を分譲開始しました!!</dd>
+          </dl>
+          <!-- iteration sample -->
+          <dl>
+            <dt>
+              <span class="annoucement__date">2020. 14. 20</span>
+              <h3 class="annoucement__title">
+                <a class="mv_sirochaUnderLine" href="./announcement/announcement.html#1120-2019-01">いなつき万葉台完売のお知らせ</a>
+              </h3>
+            </dt>
+            <dd>完売御礼。<br />ご好評いただき、ありがとうございました。</dd>
+          </dl>
+          <!-- iteration sample -->
+
+          <div>
+            <a class="mv_underarrow-white" href="./announcement/announcement.html">お知らせ一覧</a>
+          </div>
+
+        </div><!-- announcement -->
+
+    </div><!-- .topWrap -->
+
+  </article>
+
+
+  <!-- Introduction Our Service and Buisiness -->
+  <article id="services">
+
+    <div class="wrapper-left">
+      <div class="title rellax" data-rellax-speed="-3">
+        <h2>前田組の<br />事業</h2>
+        <p>
+          わたしたちは「ゆたかな暮らしを考える」ことを大切にしています。<br />
+          伝統を現代の暮らしに取り込み、普遍的な”ゆたかさ”を地域に取り戻す「地域創生」をテーマに様々な角度から事業を行っています。
+          <!-- 自然に寄り添う、手づくりする、土地のものをつかう。
+          ３つの考え方を大切に、地域創生を実現する事業を行っています。-->
+        </p>
+      </div>
+    </div>
+
+    <div class="wrapper-right rellax" data-rellax-speed="2">
+      <ul>
+
+        <li class="civillEngineering">
+          <h3>土木工事</h3>
+          <p>
+            自然環境と人間が豊かに共生できる環境を目指す取り組みをすすめています。
+          </p>
+          <p>
+            <a class="mv_underarrow-white" href="./services/civil_engineering/civil_engineering.html">詳しくみる</a>
+          </p>
+        </li>
+
+        <li class="cutterConstruction">
+          <h3>カッター工事</h3>
+          <p>
+            ここに事業の説明を掲載します。困難な環境でも、確実に、美しく裁断。
+          </p>
+          <p>
+            <a class="mv_underarrow-white" href="./services/civil_engineering/civil_engineering.html">詳しくみる</a>
+          </p>
+        </li>
+
+        <li class="shaftAndPropulsion">
+          <h3>立坑・推進工事</h3>
+          <p>
+            ここに事業の説明を掲載します。独自の工法で、安価に汎用的な施工に対応。安心のクオリティ。
+          </p>
+          <p>
+            <a class="mv_underarrow-white" href="./services/civil_engineering/civil_engineering.html">詳しくみる</a>
+          </p>
+        </li>
+
+        <li class="sustainableEnergy">
+          <h3>再生可能エネルギー</h3>
+          <p>
+            ここに事業の説明を掲載します。
+          </p>
+          <p>
+            <a class="mv_underarrow-white" href="./services/civil_engineering/civil_engineering.html">詳しくみる</a>
+          </p>
+        </li>
+
+        <li class="residentialLand">
+          <h3>宅地開発・分譲</h3>
+          <p>
+            ここに事業の説明を掲載します。
+          </p>
+          <p>
+            <a class="mv_underarrow-white" href="./services/civil_engineering/civil_engineering.html">詳しくみる</a>
+          </p>
+        </li>
+
+        <li class="creativeService">
+          <h3>クリエイティブサービス</h3>
+          <p>
+            ここに事業の説明を掲載します。
+          </p>
+          <p>
+            <a class="mv_underarrow-white" href="./services/civil_engineering/civil_engineering.html">詳しくみる</a>
+          </p>
+        </li>
+
+        <li class="sento">
+          <h3>銭湯</h3>
+          <p>
+            ここに事業の説明を掲載します。
+          </p>
+          <p>
+            <a class="mv_underarrow-white" href="./services/civil_engineering/civil_engineering.html">詳しくみる</a>
+          </p>
+        </li>
+
+        <li class="ikawaWaterVillage">
+          <h3>伊川水郷（水の村）</h3>
+          <p>
+            ここに事業の説明を掲載します。
+          </p>
+          <p>
+            <a class="mv_underarrow-white" href="./services/civil_engineering/civil_engineering.html">詳しくみる</a>
+          </p>
+        </li>
+
+      </ul>
+    </div>
+
+  </article><!-- / .services -->
+
+
+  <!-- Blog -->
+  <article id="blog">
+
+    <div class="title_wrapper">
+      <div class="title rellax" data-rellax-speed="0">
+        <h2>拝啓、<br />前田組より</h2>
+        <p>ブログの紹介文章を掲載する。ブログの紹介文章を掲載する。ブログの紹介文章を掲載する。</p>
+      </div>
+    </div>
+
+    <!-- blog list -->
+    <div id="blogList" class="rellax" data-rellax-speed="-1">
+
+      <!-- latest post -->
+      <a href="#">
+      <dl>
+        <dt>Vol.123<br/>薪割り職人の朝は早い。薪と運命と伝説。</dt>
+        <dd>
+          <img src="./img/makiwari02.jpg" alt="ブログのサムネイル画像です" />
+          <!-- p>ブログのサムネイル文章を掲載する。ブログのサムネイル文章を掲載する。</p -->
+        </dd>
+      </dl>
+      </a>
+
+      <!-- second latest post -->
+      <a href="#">
+      <dl>
+        <dt>Vol.122<br/>怪しげな木の実。実食！</dt>
+        <dd>
+          <img src="./img/daidai.jpg" alt="ブログのサムネイル画像です" />
+          <!-- p>ブログのサムネイル文章を掲載する。ブログのサムネイル文章を掲載する。</p -->
+        </dd>
+      </dl>
+      </a>
+
+      <!-- third latest post -->
+      <a href="#">
+      <dl>
+        <dt>Vol.121<br/>カブの収穫を通して知る。良い土の作り方。</dt>
+        <dd>
+          <img src="./img/kabu.jpg" alt="ブログのサムネイル画像です" />
+          <!-- p>ブログのサムネイル文章を掲載する。ブログのサムネイル文章を掲載する。</p -->
+        </dd>
+      </dl>
+      </a>
+
+      <!-- fourth latest post -->
+      <a href="#">
+      <dl>
+        <dt>Vol.120<br/>スコップとシャベルと土と。</dt>
+        <dd>
+          <img src="./img/tsuti.jpg" alt="ブログのサムネイル画像です" />
+          <!-- p>ブログのサムネイル文章を掲載する。ブログのサムネイル文章を掲載する。</p -->
+        </dd>
+      </dl>
+      </a>
+
+      <!-- fiveth latest post -->
+      <a href="#">
+      <dl>
+        <dt>Vol.119<br/>道路探訪　第15回 あの道この道</dt>
+        <dd>
+          <img src="./img/namazuta_nakasenn01.JPG" alt="ブログのサムネイル画像です" />
+          <!-- p>ブログのサムネイル文章を掲載する。ブログのサムネイル文章を掲載する。</p -->
+        </dd>
+      </dl>
+      </a>
+
+      <!-- link box -->
+      <div class="linkbox">
+        <a class="mv_underarrow-white" href="./blog/blog_list.html">過去の投稿一覧</a>
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- Recruit and Career -->
+  <article id="recruitment">
+
+    <div class="title_wrap">
+      <div class="title rellax" data-rellax-speed="-1">
+        <h2>前田組で<br/>はたらく</h2>
+        <p>前田組では衣食住の文化を継承する人材を募集しております。的な文章。</p>
+      </div>
+    </div>
+
+    <!-- recruitment list -->
+    <div id="recruitmentList">
+      <dl>
+        <dt>衣食住クリエイター</dt>
+        <dd>
+          <p>
+            伝統の食文化や生活スタイルを継承し、次代へつなげる。そして、世界へ発信する。そんなミッションに挑戦してくれる方。採用カテゴリの簡単な説明文章。採用カテゴリの簡単な説明文章。
+          </p>
+          <a class="mv_underarrow-white" href="#">詳細をみる</a>
+        </dd>
+      </dl>
+
+      <dl>
+        <dt>水の村事業 ディレクター</dt>
+        <dd>
+          <p>
+            "暮らす、はたらく"をテーマに、生活することはアートだと捉え、アーティスト、クリエイターの集まる村を作ります。<br />
+            仕事は生活の一部だ！。そんな村を作り上げることのできる人。募集。採用カテゴリの簡単な説明文章。採用カテゴリの簡単な説明文章。
+          </p>
+          <a class="mv_underarrow-white" href="#">詳細をみる</a>
+        </dd>
+      </dl>
+
+      <dl>
+        <dt>ランドスケープ エンジニア</dt>
+        <dd>
+          <p>
+            カッター工事、立坑・推進工事を行い、人のくらしを組み立てるエンジニアを募集しています。採用カテゴリの簡単な説明文章。採用カテゴリの簡単な説明文章。
+          </p>
+          <a class="mv_underarrow-white" href="#">詳細をみる</a>
+        </dd>
+      </dl>
+
+      <dl>
+        <dt>ソフトウェアエンジニア</dt>
+        <dd>
+          <p>
+            採用カテゴリの簡単な説明文章。採用カテゴリの簡単な説明文章。
+          </p>
+          <a class="mv_underarrow-white" href="#">詳細をみる</a>
+        </dd>
+      </dl>
+
+      <dl>
+        <dt>デザイナー</dt>
+        <dd>
+          <p>
+            採用カテゴリの簡単な説明文章。採用カテゴリの簡単な説明文章。
+          </p>
+          <a class="mv_underarrow-white" href="#">詳細をみる</a>
+        </dd>
+      </dl>
+
+      <dl>
+        <dt>バックエンド オフィサー</dt>
+        <dd>
+          <p>
+            会社にまつわる様々な業務。いわゆる総務、はたまた金庫番の役割をはたす経理。私たちの活動を支えてくれる、縁の下の力持ち、募集。
+            採用カテゴリの簡単な説明文章。採用カテゴリの簡単な説明文章。
+          </p>
+          <a class="mv_underarrow-white" href="#">詳細をみる</a>
+        </dd>
+      </dl>
+
+    </div>
+
+  </article>
+
+
+  <!-- Contact -->
+  <article id="contact">
+
+    <div class="title_wrapper">
+      <div class="title">
+        <h2>お問い合わせ</h2>
+        <p>各種お問い合わせは以下のフォームよりご連絡ください。</p>
+      </div>
+    </div>
+
+    <div>
+      <ul id="contactList" class="rellax" data-rellax-speed="-1">
+        <li>
+          <dl>
+            <dt class="estimate">お見積もりに関してのお問い合わせ</dt>
+            <dd>
+              <p>お見積をご希望のお客様は、下記リンク先のフォームより必要事項をご記入のうえお問い合わせください。改めて当社担当スタッフがご連絡致します。</p>
+              <p><a class="mv_underarrow-white" href="#">お見積もりに関してのお問い合わせ</a></p>
+            </dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt class="recruitment">採用に関してのお問い合わせ</dt>
+            <dd>
+              <p>採用情報に関して。下記リンク先のフォームより必要事項をご記入のうえご連絡下さい。改めて当社担当スタッフがご連絡致します。</p>
+              <p><a class="mv_underarrow-white" href="#">採用に関してのお問い合わせ</a></p>
+            </dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt class="other">その他のお問い合わせ</dt>
+            <dd>
+              <p>その他のお問い合わせにつきましては、下記リンク先のフォームより必要事項をご記入のうえご連絡下さい。改めて当社担当スタッフがご連絡致します。</p>
+              <p><a class="mv_underarrow-white" href="#">その他のお問い合わせ</a></p>
+            </dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+
+  </article>
+
+  </main>
+
+
+<!-- script loading -->
+<script type="text/javascript" src="./js/lib/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="./js/lib/rellax.min.js"></script><!-- lib of delay scrolling -->
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- script type="text/javascript" src="./js/front_scroll_function.js"></script -->
+<!-- script type="text/javascript" src=".js"></script -->
+
+<!-- #bg_video delay starting -->
+<script>
+window.onload = () => {
+  setTimeout( () => {
+    document.getElementById("bg_video").play();
+  }, 1200);
+}
+
+
+
+/* jQuery
+$(function(){
+  setTimeout(
+     function () {
+       document.getElementById("bg_video").play();
+     }, 1000
+   );
+});
+*/
+</script>
+
+<!-- lib of delay scrolling -->
+<script defer>
+  const rellax = new Rellax('.rellax');
+</script>
+
+<!--
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+  MMMMMMMMNMMMMMMMMMMMNMMMNMMNMMMNMMNMMMNMMNMMMNMMNMMMNMMNMMMNMMNMMMNMMNMMMNMMNMMMNMMNMMMNMMNMMMNMMNMMMNMMNMMMNMMNMMMNMMMM
+  MMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+  MMMNMMNMMMMMMMMMNMMMMMMMM#"TMMMMMMMMMNMMMMMMNMMMMMMNMMMMMMNMMMMMMNMMMMMMNMMM"!   ?YMMMMMMMMMMNMMMMMMNMMMMMMNMMMMMMNMMMNM
+  MMMMMMMMMMMMMMMMMMMMMM9^     MMNMMNM"?TMMNMMMMMNMMMMMMNMMMMMMNMMMMMMNMMMMMF   ..(.. TMMNMMNMMMMMNMMMMMMNMMMMMMNMMMMMMMMM
+  MMMMMMMMNMMNMMMMMMMMM`   .   MMM#"     dMMMMMMMMMMNMMMMMMNMMMMMMNMMMMMMNMM; .MMMMMMN+MMMMMMMMMMMMMMNMMMMMMNMMMMMMNMMMNMM
+  MMMMMMMMMMMMMMMMMMMMF .gM]   @^   .g                                                           .MMMMMMMMMMMMMMMMMMMMMMMM
+  MMMNMMMMMMMMMMMMMMMMN,,MM]    .   MN   .........     .....      ...........   .........     ....(MMMMNMMNMMMNMMNMMMNMMMM
+  MMMMMMNMMNMMMMMMMMMMMMNgJx   M#   MN   dMMMMMMMMMm   JMM#`   ...MMMMMMMMMMM{  MMMMMMMMMMm   JMMMMMMNMMMMMMMMMMMMMMMMMMMM
+  MMMMMMMMMMMNMMMMMMMMMMMMMF   M#  `MN   dMMM"`    ,]  ,MM]  .MMMMMMM#"`   4M{  MMMM"!    ,]  ,MMMMMMMMMMMMNMMMMMMNMMMMNMM
+  MMMMMMMMMMMMMMMMNMMMNMMMM]   MN   MN   dMD    ..-,t  ,MMN, d""?TMMF   ..,,M{  MMD    ..-,t  ,MMMMMMMMMNMMMMMNMMMMMMNMMMM
+  MMMNMMMNMMMMMMMMMMMMMMMMM]`` MN`  M#```dM   .MMMMM!``,MMMD` ..JgM# `.MMMMJd} .MM  `.MMMMM!``,MMMMMNMMMMMMMMMMMMNMMMMMMMM
+  MMMMMMMMMMNMMMMMMMMMMMMMMF...MN.. NN`..dN...MMMM5.`.`,MMF..dMMMMMN..-MMMMM5...MN...MMMM5...`,MMMMMMMMNMMMNMMMMMMMMMMMMMM
+  MMMMMMMMMMMMMMMMMMMMMMMMMF~~(MNJ__MN-~~MMm,/T>~~~(,~~JMMb~~TMMMMMMN,~?M8:~~_~(MMm,/T>~~~(,~~JMMMMNMMMMMMMMMNMMNMMMNMMNMM
+  MMMMMMNMMNMMMMMMMMMMMMMMMMNJ<MMMMNMMMNgdMMMNg++gMMb<;JMMMx:;:;:;:?MMNgJJ++M$:(MMMMMg++gMMb<:JMMMMMMMMMMNMMMMMMMMMMMMMMMM
+  MMMNMMMMMMMMMMMMMMMMNMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNMMMMMNggggggJMMMMMMMMMNgMMMMMMMMMMMMMNNMNMMMMNMMMMMMMMMMMMNMMMMMMM
+  MMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMNMMMNMMNMMMMMNMMNM
+  MMMMMMMMNMMMMMMMNMMMMMMMMNMMMMMMMMMMMMNMMMMMMMMMM#""""YMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM""MMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMMMMMMMMMNMMMMD!        MMMNMMMMMMMMMNMMMMMMMMMMMMMMMM#'   .gMMMMMMNMMMNMMMMMMMMNMMMMMMM
+  MMMNMMMMMMNMMMMMMMMMNMMMMMMMMMMMMMNMMNMMMMMMD   `..gg,  dMMMMMNMMMNMMMMMNMMNMMNMMNMMNN.. .MMMMMNMMMMMMMMMMNMMNMMMMMNMMMM
+  MMMMMMNMMMMMMMMMMMMMMMMNMMNMMMMMMMMMMMMMMMMF  `.MMMMM$ .MMNNMNMNNMNMNMNNMNMNMNMNNMNMMNMMMMMNMNNMMMNMMMNMMMMMMMMMMMMMMNMM
+  MMMMMMMMMNMMMMMMMMMMMMMMMMMMMNMMNMMMMMMNMMM`  .MMMMM;                                           MMMMMMMMMMMMMMMMNMMMMMMM
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMM#   (MMMMMN............., `.., ` ...........,   .......MMMNMMMNMMNMMNMMMMMMMMM
+  MMMNMMMMMMMNMMMMMMMMNMMMNMMNMMMMMMMMMMNMMMN` `,MMMMMR   MMMMMMMMMMF  ,M]  `MMY""`  `,M# ` -MMMMMMMMMMMMMMMMMMMMMMMNMMNMM
+  MMMMMMMNMMMMMMMMNMMMMMMMMMMMMMNMMNMMMMMMMMM/```WMMMMM`` M""""""MMMF``,M]````.``.M#``,M#```-MMMMMMMNMMMNMMMMMMMMMMMMMMMMM
+  MMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMe.` WMMMM...MN...`.JMMF..,MF...M#.`,M#.`,M#...-MMMMMMMMMMMMMMNMMNMMNMMMMMMMM
+  MMMMMMMMMMMMMMMMMMMMMMMNMMNMMNMMMMMMMMMNMMMMMMN.-(?77...MMMMr..JMMF..(MF.._M#..(M#..(M#...(MMMMMNMMMNMMMMMMMMMMMMMNMMNMM
+  MMMNMMMNMMMMMMMMMMMMNMMMMMMMMMMMNMMNMMMMMNMMMp<<?MMMM~~~MMMM]~~_T5~~~(MF~~(M#~~JM#~~JM#~~~JMMMMMMMMMMMMNMMMMMMMMMMMMMMMM
+  MMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM:::dMM#:::MMMMMmJ:::-::JMF::(M#::JM#::JMN:::JMMMNMMMNMMMMMMMNMMNMMNMMMMMMM
+  MMMMMMMMMMMMMMMMMMMMMMMMMNMMNMMNMMMMMNMMMMMMMM+;;;;;;;;jMMMMMMMMMMN+;JMNJ<+MMNJJMNg+JMN;;;JMMMMMMMMMMNMMMMMMMMMMMMMNMMNM
+  MMMMMMNMMNMMMMMNMMMMMMMMMMMMMMMMMMNMMMMMNMMNMMMNgJ-(JJMMMMMMMMMMMMMMMNMMMMNMMMMMMMMMNMMMaJJMMMMMMNMMMMMMMMMMMMMMMMMMMMMM
+  MMMNMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMNMMNMMNMMNMMMMMMM
+  MMMMMMMMMMMNMMMMMMMMMMMNMMNMMNMMNMMMNMMNMMMMMMMMMMMMMMMMMMMMMMNMMMMMMNMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMNMMMM
+  MMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMMMMMMMMMNMMNMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMNMM
+  MMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMMMMMMMMMMMMMMMMMNMMMMMMNMMNMMNMMMMMMNMMNMMNMMMMMMMMNMMNMMNMMNMMMMMMM
+  MMMNMMMMMMMNMMMMMMMMMMMMNMMNMMNMMNMMNMMNMMMMMMMMMMMMNMMMMMMMNMMNMMMMMMMNMMMMMMMMMMMMNMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMNMMMM
+  MMMMMMNMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMMMMMMMMMNMMNMMMMMMMNMMMMMMMNMMMMMMMMMMMMNMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMM
+  MMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMNMMMMMMMNMMNMMNMMMMMMNMMNMMMMMMMMMNMMNMMNMMNMMMMNMM
+-->
+
+</body>
+</html>
