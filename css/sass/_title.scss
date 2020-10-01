@@ -1,0 +1,134 @@
+
+/* *********************
+  *********************
+  <section id="title">
+  *********************
+********************* */
+#title {
+  //position: relative;;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding:5%;
+  div {
+    position:relative;
+    top:0;left:0;
+    width: 49%;
+    height:60vh;
+    //display: grid;
+    //place-items: center;
+    overflow: hidden;
+    z-index: 4;
+  }
+  h2,p {
+    color:#fff;
+  }  
+  div + div {
+    h2 {
+      font-size: 1.2rem;
+      font-weight: normal;
+      letter-spacing: 0.1rem;
+      margin-bottom:1rem;
+    }
+    //border-left:1px solid #fff;
+    padding-left:5%;
+
+    &::before, &::after {
+      display:block;
+      position:absolute;
+      top:0;
+      left:0;
+      width:1px;
+      background-color: transparent;
+      content:" ";
+  
+      animation-name: titleSectionBorder;
+      animation-iteration-count: infinite;
+  
+      z-index: 100;
+    }
+    &::before {
+      //animation-delay: 2s;
+      height:90%;
+      animation-duration: 10s;
+    }
+    &::after {
+      animation-delay: 5s;
+      height:90%;
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes titleSectionBorder {
+  0% { transform: translateY(-100%); background-color:#fff;}
+  //25%{ transform: translatey(-50%);}
+  //50%{ transform: translatey(0%);}
+  //75%{ transform: translatey(50%);}
+  100%{transform: translateY(110%);}
+}
+
+// Title & SVG Element
+h1 {
+  color: #fff;
+  //color:#383838;
+  font-weight: 100;
+  letter-spacing: 0.05rem;
+  text-align:center;
+
+  svg {
+    display:block;
+    transform: scale(0.5);
+    fill:#707c7e;
+
+    polygon,path {
+      //stroke-dasharray: 3500;
+      //stroke-dashoffset: 0;
+      //stroke-width: 1;
+      animation-name: titleAnm;
+      //animation-delay: 2s;
+      animation-duration: 25s;
+      animation-iteration-count: infinite;
+    }
+
+  }
+
+}
+
+//svg animation
+@keyframes titleAnm {
+  0% {
+    fill: #fff;
+    //stroke:#707c7e;
+    //stroke-dashoffset: 800;
+  }
+  30% {
+    fill:#a6edbc;
+    //stroke:transparent;
+    //stroke-dashoffset: 3500;
+    //stroke:#d1d1d1;
+  }
+  50% {
+    fill:#5fadf2;
+    //stroke:#5fadf2;
+    //stroke-dashoffset: 4000;
+    //stroke-dashoffset: 2500;
+  }
+  60% {
+    fill:#cbb3c9;
+    //stroke:#0c243f;
+    //stroke-dashoffset: 800;
+    //stroke:#cbb3c9;
+  }
+  80% {
+    //stroke:#d1d1d1;
+    fill:#ef95ab;
+    //stroke:#28415c;
+  }
+  100% {
+    fill:#fff;
+    //stroke:#707c7e;
+    //stroke-dashoffset: 800;
+  }
+}

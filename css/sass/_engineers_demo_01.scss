@@ -1,0 +1,172 @@
+/* *********************
+  *********************
+  <section id="engineers_demo_01">
+  *********************
+********************* */
+#engineers_demo_01 {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #fff;
+  .title {
+    width:70%;
+    height:100vh;
+    //background-color: #e472cb;
+
+    background-size: auto auto;
+    background-color: rgba(255, 255, 255, 1);
+    background-image: repeating-linear-gradient(50deg, transparent, transparent 10px, rgba(242, 132, 194, 1) 10px, rgba(242, 132, 194, 1) 60px );
+
+    padding:4%;
+
+    h2 {
+      color:#fff;
+      font-size:9.2rem;
+      line-height:8rem;
+    }
+    h3 {
+      color:#444;
+      font-size: 2rem;
+      font-weight: lighter;
+      letter-spacing: 1px;
+      line-height: 20rem;
+      text-align: center;
+    }
+  }
+  .link {
+    width:30%;
+    height:100vh;
+    background-color: #fff;
+    padding:2%;
+    article {
+      display: grid;
+      place-items: center;
+      width:100%;
+      padding:5%;
+      h3 {
+        color:#555;
+        font-size:2rem;
+        line-height:2.5rem;
+      }
+      p {
+        color:#555;
+        font-size:0.9rem;
+        line-height:1.1rem;
+      }
+    }
+    div {
+      width:100%;
+      height:40%;
+      overflow: hidden;
+      padding: 8% 0;
+      text-align:center;
+      svg {
+        animation-name: EDarrowslide;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        //animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+        margin:0 auto;
+      }
+    }
+    @keyframes EDarrowslide {
+      0%{ transform: translateY(5%) scale(1.5);}
+      100%{transform:translateY(340%) scale(1.1);}
+    }
+
+    p{
+      display:grid;
+      place-items: center;
+      position:relative;
+      top:0;left:0;
+      width:100%;
+      //height:40%;
+      line-height: normal;
+      a {
+        display:inline-block;
+        position:relative;
+        top:0;left:0;
+        width:80%;
+        height:3rem;
+        //background-color:#e472cb;
+        background-color:transparent;
+        line-height: 3rem;
+        outline: none;
+        overflow:hidden;
+        padding:0;
+        text-align: center;
+        text-decoration: none;
+          //transition: all .6s cubic-bezier(0.76, 0, 0.24, 1);
+          //transition-property:all;
+          //transition-duration: 0.6s;
+          //transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+        &::before, &::after { // before:top-left, after:top-right
+          display:block;
+          position:absolute;
+          background-color:#e472cb;
+          content: " ";
+          transition: all .2s cubic-bezier(0.76, 0, 0.24, 1);
+          top:0;
+        }
+        &::before {
+          left:0;
+          width:0;
+          height:1px;
+        }
+        &::after {
+          right:0;
+          width:1px;
+          height:0;
+          transition-delay: .2s;
+        }
+
+        span {
+          // link letter
+          position:relative;
+          top:0;left:0;
+          display:inline-block;
+          width: 100%;
+          height: 100%;
+          //width: calc(100% - 1px);
+          //height: calc(100% - 1px);
+          color:#e472cb;
+          font-weight: 300;
+          font-size: 2rem;
+          letter-spacing: 1px;
+          margin-top:-1px;
+          //margin: auto;
+          vertical-align: middle;
+          &::before, &::after { // before:bottom-left, after:bottom-right
+            display:block;
+            position:absolute;
+            background-color:#e472cb;
+            content: " ";
+            transition: all .2s cubic-bezier(0.76, 0, 0.24, 1);
+          }
+          &::before {
+            left:0;
+            bottom:0;
+            width:1px;
+            height:0;
+            transition-delay: .6s;
+          }
+          &::after {
+            right:0;
+            bottom:1px;
+            width:0;
+            height:1px;
+            transition-delay: .4s;
+          }
+        }
+
+        &:hover::before { width:100%;}
+        &:hover::after { height:100%;}
+        &:hover span::before { height:100%;}
+        &:hover span::after { width:100%;}
+/*        &:hover {
+          //background-color: #e472cb;
+          //border-radius: 50%;
+        }*/
+      }
+    }
+
+  }
+}

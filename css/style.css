@@ -33,6 +33,7 @@ section p { font-size: 0.9rem; font-weight: 100; }
 
 section:nth-of-type(even) { background-color: #5fadf2; }
 
+/* NOTICE ***** @import rule will be delete from sass, in near future. think about using @use rule and change to modern preprosesser. */
 /* ********************* <section id="title"> */
 #title { display: flex; flex-direction: row; justify-content: center; align-items: center; padding: 5%; }
 
@@ -85,20 +86,54 @@ h1 svg polygon, h1 svg path { animation-name: titleAnm; animation-duration: 25s;
 /* ********************* <section id="engineers_demo_01"> */
 #engineers_demo_01 { display: flex; flex-direction: row-reverse; background-color: #fff; }
 
-#engineers_demo_01 .title { width: 70%; height: 100vh; background-color: #e472cb; padding: 4%; }
+#engineers_demo_01 .title { width: 70%; height: 100vh; background-size: auto auto; background-color: white; background-image: repeating-linear-gradient(50deg, transparent, transparent 10px, #f284c2 10px, #f284c2 60px); padding: 4%; }
 
-#engineers_demo_01 .title h2 { color: #bfbfbf; font-size: 8rem; line-height: 7rem; }
+#engineers_demo_01 .title h2 { color: #fff; font-size: 9.2rem; line-height: 8rem; }
 
-#engineers_demo_01 .title h3 { color: #e5e6bc; font-size: 2rem; font-weight: lighter; letter-spacing: 1px; line-height: 20rem; text-align: center; }
+#engineers_demo_01 .title h3 { color: #444; font-size: 2rem; font-weight: lighter; letter-spacing: 1px; line-height: 20rem; text-align: center; }
 
 #engineers_demo_01 .link { width: 30%; height: 100vh; background-color: #fff; padding: 2%; }
 
-#engineers_demo_01 .link p, #engineers_demo_01 .link aside { display: grid; place-items: center; position: relative; top: 0; left: 0; width: 100%; height: 28%; background-color: #999999; color: #fff; margin-bottom: 15%; padding: 5%; }
+#engineers_demo_01 .link article { display: grid; place-items: center; width: 100%; padding: 5%; }
 
-#engineers_demo_01 .link p a, #engineers_demo_01 .link aside a { display: inline-block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 101%; height: 101%; background-color: #e472cb; outline: none; text-align: center; text-decoration: none; transition-property: all; transition-duration: 0.7s; transition-timing-function: ease-out; }
+#engineers_demo_01 .link article h3 { color: #555; font-size: 2rem; line-height: 2.5rem; }
 
-#engineers_demo_01 .link p a span, #engineers_demo_01 .link aside a span { display: inline-block; height: 50%; color: #fff; font-weight: 300; font-size: 2rem; letter-spacing: 1px; margin-top: 25%; }
+#engineers_demo_01 .link article p { color: #555; font-size: 0.9rem; line-height: 1.1rem; }
 
-#engineers_demo_01 .link p a:hover, #engineers_demo_01 .link aside a:hover { background-color: #fff; border-radius: 50%; }
+#engineers_demo_01 .link div { width: 100%; height: 40%; overflow: hidden; padding: 8% 0; text-align: center; }
 
-#engineers_demo_01 .link p a:hover span, #engineers_demo_01 .link aside a:hover span { color: #e472cb; }
+#engineers_demo_01 .link div svg { animation-name: EDarrowslide; animation-duration: 4s; animation-iteration-count: infinite; margin: 0 auto; }
+
+@keyframes EDarrowslide { 0% { transform: translateY(5%) scale(1.5); }
+  100% { transform: translateY(340%) scale(1.1); } }
+
+#engineers_demo_01 .link p { display: grid; place-items: center; position: relative; top: 0; left: 0; width: 100%; line-height: normal; }
+
+#engineers_demo_01 .link p a { display: inline-block; position: relative; top: 0; left: 0; width: 80%; height: 3rem; background-color: transparent; line-height: 3rem; outline: none; overflow: hidden; padding: 0; text-align: center; text-decoration: none; /*        &:hover { //background-color: #e472cb; //border-radius: 50%; }*/ }
+
+#engineers_demo_01 .link p a::before, #engineers_demo_01 .link p a::after { display: block; position: absolute; background-color: #e472cb; content: " "; transition: all 0.2s cubic-bezier(0.76, 0, 0.24, 1); top: 0; }
+
+#engineers_demo_01 .link p a::before { left: 0; width: 0; height: 1px; }
+
+#engineers_demo_01 .link p a::after { right: 0; width: 1px; height: 0; transition-delay: .2s; }
+
+#engineers_demo_01 .link p a span { position: relative; top: 0; left: 0; display: inline-block; width: 100%; height: 100%; color: #e472cb; font-weight: 300; font-size: 2rem; letter-spacing: 1px; margin-top: -1px; vertical-align: middle; }
+
+#engineers_demo_01 .link p a span::before, #engineers_demo_01 .link p a span::after { display: block; position: absolute; background-color: #e472cb; content: " "; transition: all 0.2s cubic-bezier(0.76, 0, 0.24, 1); }
+
+#engineers_demo_01 .link p a span::before { left: 0; bottom: 0; width: 1px; height: 0; transition-delay: .6s; }
+
+#engineers_demo_01 .link p a span::after { right: 0; bottom: 1px; width: 0; height: 1px; transition-delay: .4s; }
+
+#engineers_demo_01 .link p a:hover::before { width: 100%; }
+
+#engineers_demo_01 .link p a:hover::after { height: 100%; }
+
+#engineers_demo_01 .link p a:hover span::before { height: 100%; }
+
+#engineers_demo_01 .link p a:hover span::after { width: 100%; }
+
+/* ************** id="omsby" */
+#omsby { background-color: #f8e9e3; }
+
+#omsby h2 { font-size: 5rem; text-align: center; }
