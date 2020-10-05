@@ -1,20 +1,25 @@
 @charset "utf-8";
 
-/*
-2020のメディアクエリについて。。。
-For Mobile が 768px 以下 (タブレット以下はの場合はモバイルデザイン画面)
-For PC が 769px 以上
-@media ( width <= 768px ) {
-  // For Mobile
-}
-@media ( 769px <= width ) {
-  // For PC
-}
- */
+// 2020のメディアクエリについて。。。
+// For Mobile が 768px 以下 (タブレット以下はの場合はモバイルデザイン画面)
+// For PC が 769px 以上
+//@media ( width <= 768px ) {
+//  // For Mobile
+//}
+//@media ( 769px <= width ) {
+//  // For PC
+//}
+// * scssでは使えないみたい... dart_sass ならコンパイルできる？
 
+@import "reset";
 @import "button";
 @import "color_variables";
 @import "font_variables";
+
+// valiables
+:root {
+  --header-z-index: 1002;
+}
 
 * {
   /* google fonts */
@@ -28,6 +33,8 @@ body {
   top:0;
   left:0;
   // padding-left:3rem;
+}
+body:not(.default) {
   padding-left:20%;
 }
 
@@ -66,6 +73,8 @@ body.body-slide-open {
 /* ****
   01. header is put on left side of page(window)
   **** */
+// header z-index value
+// $header_zidx: 1002;
 header {
   position: fixed ;
   top: 0;
@@ -80,7 +89,7 @@ header {
   height:100%;
 
   background-color:$sironeri;
-  z-index:1002;
+  z-index: var(--header-z-index);
   color:$kon;
   //overflow:hidden;
   /* header iocons */
@@ -102,8 +111,8 @@ header {
 }// end of header cascading
 
   /* **************
-   header slide in Animation setting WHEN Page had loading.
-   ************** */
+    header slide in Animation setting WHEN Front Page had loading.
+    ************** */
   header.slidein {
     // header slide in animation setting
     animation-name:headerSlidein;
@@ -120,6 +129,12 @@ header {
       transform:translateX(0%);
     }
   }
+
+  /* default header position */
+  header.default {
+    transform: translateX(-90%);
+  }
+
 
 // *****************
 // **** ＜ header toggel ui ****
@@ -167,6 +182,7 @@ header {
   background-color: transparent;
   box-sizing: border-box;
   cursor:pointer;
+  z-index: calc( var(--header-z-index) + 5);
 
   &::after {
     display:inline-block;
@@ -200,10 +216,13 @@ header {
 }
 
 // When <header> is hideen, #headerOpener is showing.
-.hdr-close #headerOpener{
+.hdr-close > #headerOpener,
+.default > #headerOpener{
   display:grid;
   place-items: center;
 }
+
+
 
 // when click (or tap) #headerOpener,
 // below animation class ".hdr-open" is add to <header> className.

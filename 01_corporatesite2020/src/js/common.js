@@ -29,6 +29,7 @@ document.getElementById('headerOpener').addEventListener( 'click', () => {
 
   // set animation classes
   hdr.classList.remove('hdr-close');
+  hdr.classList.remove('default');
   hdr.classList.add('hdr-open');
   // reset element position by css
   hdr.style.transform = "translateX(0%)";
@@ -38,6 +39,7 @@ document.getElementById('headerOpener').addEventListener( 'click', () => {
   bdy.style.paddingLeft = "20%";
 
 });
+
 
 // jQuery version
 $(function() {
