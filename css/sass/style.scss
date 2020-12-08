@@ -4,6 +4,34 @@
   compile to style.css
 */
 
+/*
+  ***** NOTICE *****
+  @import rule will be delete from sass, in near future.
+  think about using @use rule and change to modern preprosesser.
+ */
+
+// <section id="title">
+// _title.scss
+//@import "title";
+@use "title";
+
+// <section id="corporatesite2020">
+// _corporatesite2020.scss
+//@import "corporatesite2020";
+@use "corporatesite2020";
+
+
+// <section id="engineers_demo_01">
+// _engineers_demo_01.scss
+//@import "engineers_demo_01";
+@use "engineers_demo_01";
+
+// <section id="omsby">
+// _omsby.scss
+//@import "omsby";
+@use "omsby";
+
+
 // Reset CSS
 *,*::before,*::after{box-sizing:border-box}ul[class],ol[class]{padding:0}body,h1,h2,h3,h4,p,ul[class],ol[class],figure,blockquote,dl,dd{margin:0}html{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}ul[class],ol[class]{list-style:none}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}article>*+*{margin-top:1em}input,button,textarea,select{font:inherit}img:not([alt]){filter:blur(10px)}@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
 
@@ -41,27 +69,3 @@ section {
 section:nth-of-type(even) {
   background-color: #5fadf2;
 }
-
-/*
-  ***** NOTICE *****
-  @import rule will be delete from sass, in near future.
-  think about using @use rule and change to modern preprosesser.
- */
-
-// <section id="title">
-// _title.scss
-@import "title";
-
-
-// <section id="corporatesite2020">
-// _corporatesite2020.scss
-@import "corporatesite2020";
-
-
-// <section id="engineers_demo_01">
-// _engineers_demo_01.scss
-@import "engineers_demo_01";
-
-// <section id="omsby">
-// _omsby.scss
-@import "omsby";

@@ -1,141 +1,697 @@
-/* compile to style.css */
-*, *::before, *::after { box-sizing: border-box; }
+/* *********************
+  *********************
+  <section id="title">
+  *********************
+********************* */
+#title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
+#title div {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 49%;
+  height: 60vh;
+  overflow: hidden;
+  z-index: 4;
+}
+#title h2, #title p {
+  color: #fff;
+}
+#title div + div {
+  padding-left: 5%;
+}
+#title div + div h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+}
+#title div + div::before, #title div + div::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  background-color: transparent;
+  content: " ";
+  animation-name: titleSectionBorder;
+  animation-iteration-count: infinite;
+  z-index: 100;
+}
+#title div + div::before {
+  height: 90%;
+  animation-duration: 10s;
+}
+#title div + div::after {
+  animation-delay: 5s;
+  height: 90%;
+  animation-duration: 10s;
+}
 
-ul[class], ol[class] { padding: 0; }
+@keyframes titleSectionBorder {
+  0% {
+    transform: translateY(-100%);
+    background-color: #fff;
+  }
+  100% {
+    transform: translateY(110%);
+  }
+}
+h1 {
+  color: #fff;
+  font-weight: 100;
+  letter-spacing: 0.05rem;
+  text-align: center;
+}
+h1 svg {
+  display: block;
+  transform: scale(0.5);
+  fill: #707c7e;
+}
+h1 svg polygon, h1 svg path {
+  animation-name: titleAnm;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+}
 
-body, h1, h2, h3, h4, p, ul[class], ol[class], figure, blockquote, dl, dd { margin: 0; }
+@keyframes titleAnm {
+  0% {
+    fill: #fff;
+  }
+  30% {
+    fill: #a6edbc;
+  }
+  50% {
+    fill: #5fadf2;
+  }
+  60% {
+    fill: #cbb3c9;
+  }
+  80% {
+    fill: #ef95ab;
+  }
+  100% {
+    fill: #fff;
+  }
+}
+/* *********************
+  *********************
+  <section id="corporatesite2020">
+  *********************
+********************* */
+#corporatesite2020 {
+  background-color: #0c243f;
+  overflow: hidden;
+}
+#corporatesite2020 div {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+}
+#corporatesite2020 div h2 {
+  color: #fcfaf2;
+  font-size: 12rem;
+  font-weight: 900;
+  line-height: 9rem;
+  margin-bottom: 2rem;
+}
+#corporatesite2020 div p {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #fcfaf2;
+  padding-left: 5%;
+  line-height: 5rem;
+}
+#corporatesite2020 div p a {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: inline-block;
+  color: #d99b75;
+  font-size: 5rem;
+  font-weight: 100;
+  outline: none;
+  overflow: hidden;
+  text-align: right;
+  text-decoration: none;
+}
+#corporatesite2020 div p a::before {
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 1px;
+  background-color: #d99b75;
+  content: " ";
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in;
+}
+#corporatesite2020 div p a:hover::before {
+  left: 0;
+}
 
-html { scroll-behavior: smooth; }
+/* *********************
+  *********************
+  <section id="engineers_demo_01">
+  *********************
+********************* */
+#engineers_demo_01 {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #fff;
+}
+#engineers_demo_01 .title {
+  width: 70%;
+  height: 100vh;
+  background-size: auto auto;
+  background-color: white;
+  background-image: repeating-linear-gradient(50deg, transparent, transparent 10px, #f284c2 10px, #f284c2 60px);
+  padding: 4%;
+}
+#engineers_demo_01 .title h2 {
+  color: #fff;
+  font-size: 9.2rem;
+  line-height: 8rem;
+}
+#engineers_demo_01 .title h3 {
+  color: #444;
+  font-size: 2rem;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  line-height: 20rem;
+  text-align: center;
+}
+#engineers_demo_01 .link {
+  width: 30%;
+  height: 100vh;
+  background-color: #fff;
+  padding: 2%;
+}
+#engineers_demo_01 .link article {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 5%;
+}
+#engineers_demo_01 .link article h3 {
+  color: #555;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+#engineers_demo_01 .link article p {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+}
+#engineers_demo_01 .link div {
+  width: 100%;
+  height: 40%;
+  overflow: hidden;
+  padding: 8% 0;
+  text-align: center;
+}
+#engineers_demo_01 .link div svg {
+  animation-name: EDarrowslide;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  margin: 0 auto;
+}
+@keyframes EDarrowslide {
+  0% {
+    transform: translateY(5%) scale(1.5);
+  }
+  100% {
+    transform: translateY(340%) scale(1.1);
+  }
+}
+#engineers_demo_01 .link p {
+  display: grid;
+  place-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  line-height: normal;
+}
+#engineers_demo_01 .link p a {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 3rem;
+  background-color: transparent;
+  line-height: 3rem;
+  outline: none;
+  overflow: hidden;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  /*        &:hover {
+            //background-color: #e472cb;
+            //border-radius: 50%;
+          }*/
+}
+#engineers_demo_01 .link p a::before, #engineers_demo_01 .link p a::after {
+  display: block;
+  position: absolute;
+  background-color: #e472cb;
+  content: " ";
+  transition: all 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+  top: 0;
+}
+#engineers_demo_01 .link p a::before {
+  left: 0;
+  width: 0;
+  height: 1px;
+}
+#engineers_demo_01 .link p a::after {
+  right: 0;
+  width: 1px;
+  height: 0;
+  transition-delay: 0.2s;
+}
+#engineers_demo_01 .link p a span {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: #e472cb;
+  font-weight: 300;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-top: -1px;
+  vertical-align: middle;
+}
+#engineers_demo_01 .link p a span::before, #engineers_demo_01 .link p a span::after {
+  display: block;
+  position: absolute;
+  background-color: #e472cb;
+  content: " ";
+  transition: all 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+}
+#engineers_demo_01 .link p a span::before {
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  height: 0;
+  transition-delay: 0.6s;
+}
+#engineers_demo_01 .link p a span::after {
+  right: 0;
+  bottom: 1px;
+  width: 0;
+  height: 1px;
+  transition-delay: 0.4s;
+}
+#engineers_demo_01 .link p a:hover::before {
+  width: 100%;
+}
+#engineers_demo_01 .link p a:hover::after {
+  height: 100%;
+}
+#engineers_demo_01 .link p a:hover span::before {
+  height: 100%;
+}
+#engineers_demo_01 .link p a:hover span::after {
+  width: 100%;
+}
 
-body { min-height: 100vh; text-rendering: optimizeSpeed; line-height: 1.5; }
+/* **************
+  id="omsby"
+ ************** */
+#omsby {
+  display: grid;
+  place-items: center;
+  background-color: #f8e9e3;
+}
+#omsby h2 {
+  color: transparent;
+  font-size: 0.1rem;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  clear: both;
+}
+#omsby p {
+  text-align: center;
+}
+#omsby svg {
+  float: left;
+  display: inline;
+  width: auto;
+  height: auto;
+  fill: #32312e;
+  transform: scale(0.2);
+}
+#omsby #O {
+  animation-name: omsby_O;
+  animation-duration: 3.2s;
+  animation-delay: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /*
+  animation-name: omsby_O;
+  animation-duration: $objectAnimateDuration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  */
+}
+@keyframes omsby_O {
+  0% {
+    transform: scale(0.01);
+  }
+  1% {
+    transform: scale(0.4, 0.35) translate(0%, -2%);
+  }
+  3% {
+    transform: scale(0.74, 0.55) translate(0%, -5%);
+  }
+  5% {
+    transform: scale(0.94, 1.04) translate(0%, -28%);
+  }
+  7% {
+    transform: scale(0.64, 0.84) translate(0%, -31%);
+  }
+  10% {
+    transform: scale(0.31, 0.36) translate(0%, -22%);
+  }
+  12% {
+    transform: scale(0.27, 0.22) translate(0%, -14%);
+  }
+  14% {
+    transform: scale(0.22, 0.2) translate(0%, -5%);
+  }
+  16% {
+    transform: scale(0.2, 0.2) translate(0%, 0%);
+  }
+  100% {
+    transform: scale(0.2, 0.2) translate(0%, 0%);
+  }
+}
+#omsby #M {
+  animation-name: omsby_M;
+  animation-duration: 3.2s;
+  animation-delay: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes omsby_M {
+  0% {
+    transform: scale(0.2, 0.2);
+  }
+  15% {
+    transform: scale(0.2, 0.2) translate(0%, 0%);
+  }
+  16% {
+    transform: scale(0.52, 0.46) translate(0%, -2%);
+  }
+  18% {
+    transform: scale(0.68, 0.47) translate(0%, -5%);
+  }
+  20% {
+    transform: scale(0.94, 0.86) translate(0%, -31%);
+  }
+  22% {
+    transform: scale(0.99, 1.14) translate(0%, -33%);
+  }
+  24% {
+    transform: scale(0.88, 1.34) translate(0%, -36%);
+  }
+  26% {
+    transform: scale(0.64, 0.85) translate(0%, -24%);
+  }
+  27% {
+    transform: scale(0.54, 0.73) translate(0%, -18%);
+  }
+  29% {
+    transform: scale(0.44, 0.68) translate(0%, -16%);
+  }
+  30% {
+    transform: scale(0.31, 0.48) translate(0%, -11%);
+  }
+  31% {
+    transform: scale(0.25, 0.24) translate(0%, -8%);
+  }
+  32% {
+    transform: scale(0.2, 0.2);
+  }
+  100% {
+    transform: scale(0.2, 0.2);
+  }
+}
+#omsby #S {
+  animation-name: omsby_S;
+  animation-duration: 3.2s;
+  animation-delay: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes omsby_S {
+  0% {
+    transform: scale(0.2, 0.2);
+  }
+  31% {
+    transform: scale(0.2, 0.2);
+  }
+  32% {
+    transform: scale(0.21, 0.24);
+  }
+  33% {
+    transform: scale(0.28, 0.22) translate(0%, -2%);
+  }
+  34% {
+    transform: scale(0.72, 0.47) translate(0%, -6%);
+  }
+  35% {
+    transform: scale(0.89, 0.57) translate(0%, -16%);
+  }
+  36% {
+    transform: scale(0.9, 1.17) translate(0%, -34%);
+  }
+  38% {
+    transform: scale(0.81, 1.27) translate(0%, -34%);
+  }
+  39% {
+    transform: scale(0.61, 0.93) translate(0%, -22%);
+  }
+  40% {
+    transform: scale(0.51, 0.78) translate(0%, -17%);
+  }
+  45% {
+    transform: scale(0.33, 0.44) translate(0%, -9%);
+  }
+  47% {
+    transform: scale(0.28, 0.38) translate(0%, -4%);
+  }
+  48% {
+    transform: scale(0.22, 0.25) translate(0%, -2%);
+  }
+  49% {
+    transform: scale(0.2, 0.2) translate(0%, 0%);
+  }
+  100% {
+    transform: scale(0.2, 0.2);
+  }
+}
+#omsby #B {
+  animation-name: omsby_B;
+  animation-duration: 3.2s;
+  animation-delay: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes omsby_B {
+  0% {
+    transform: scale(0.2, 0.2);
+  }
+  48% {
+    transform: scale(0.2, 0.2) translate(0%, 0%);
+  }
+  49% {
+    transform: scale(0.59, 0.34) translate(0%, -18%);
+  }
+  51% {
+    transform: scale(0.72, 0.58) translate(0%, -22%);
+  }
+  53% {
+    transform: scale(0.98, 1.33) translate(0%, -35%);
+  }
+  56% {
+    transform: scale(0.89, 1.4) translate(0%, -34%);
+  }
+  60% {
+    transform: scale(0.61, 0.73) translate(0%, -26%);
+  }
+  61% {
+    transform: scale(0.53, 0.68) translate(0%, -20%);
+  }
+  62% {
+    transform: scale(0.31, 0.5) translate(0%, -13%);
+  }
+  63% {
+    transform: scale(0.26, 0.44) translate(0%, -11%);
+  }
+  64% {
+    transform: scale(0.2, 0.2) translate(0%, 0%);
+  }
+  100% {
+    transform: scale(0.2, 0.2);
+  }
+}
+#omsby #Y {
+  animation-name: omsby_Y;
+  animation-duration: 3.2s;
+  animation-delay: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes omsby_Y {
+  0% {
+    transform: scale(0.2, 0.2);
+  }
+  63% {
+    transform: scale(0.2, 0.2);
+  }
+  64% {
+    transform: scale(0.2, 0.2) translate(0%, 0%);
+  }
+  65% {
+    transform: scale(0.44, 0.24) translate(0%, -20%);
+  }
+  67% {
+    transform: scale(0.64, 0.44) translate(0%, -25%);
+  }
+  69% {
+    transform: scale(0.73, 0.99) translate(0%, -31%);
+  }
+  70% {
+    transform: scale(0.85, 1.04) translate(0%, -34%);
+  }
+  72% {
+    transform: scale(0.91, 1.1) translate(0%, -36%);
+  }
+  74% {
+    transform: scale(0.77, 0.91) translate(0%, -28%);
+  }
+  76% {
+    transform: scale(0.68, 0.87) translate(0%, -25%);
+  }
+  78% {
+    transform: scale(0.44, 0.61) translate(0%, -13%);
+  }
+  79% {
+    transform: scale(0.23, 0.34) translate(0%, -6%);
+  }
+  80% {
+    transform: scale(0.23, 0.34) translate(0%, -6%);
+  }
+  100% {
+    transform: scale(0.2, 0.2) translate(0%, 0%);
+  }
+}
 
-ul[class], ol[class] { list-style: none; }
+/*
+  compile to style.css
+*/
+/*
+  ***** NOTICE *****
+  @import rule will be delete from sass, in near future.
+  think about using @use rule and change to modern preprosesser.
+ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
-a:not([class]) { text-decoration-skip-ink: auto; }
+ul[class], ol[class] {
+  padding: 0;
+}
 
-img, picture { max-width: 100%; display: block; }
+body, h1, h2, h3, h4, p, ul[class], ol[class], figure, blockquote, dl, dd {
+  margin: 0;
+}
 
-article > * + * { margin-top: 1em; }
+html {
+  scroll-behavior: smooth;
+}
 
-input, button, textarea, select { font: inherit; }
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
 
-img:not([alt]) { filter: blur(10px); }
+ul[class], ol[class] {
+  list-style: none;
+}
 
-@media (prefers-reduced-motion: reduce) { * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
 
-body { background-color: #000; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; z-index: 1; }
+img, picture {
+  max-width: 100%;
+  display: block;
+}
 
-main { display: grid; place-items: center; width: 100vw; max-height: 100vh; overflow-y: scroll; scroll-snap-type: y proximity; z-index: 2; }
+article > * + * {
+  margin-top: 1em;
+}
 
-section { position: sticky; top: 0; width: 100%; min-height: 100vh; scroll-snap-align: start; z-index: 3; }
+input, button, textarea, select {
+  font: inherit;
+}
 
-section p { font-size: 0.9rem; font-weight: 100; }
+img:not([alt]) {
+  filter: blur(10px);
+}
 
-section:nth-of-type(even) { background-color: #5fadf2; }
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  background-color: #000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  z-index: 1;
+}
 
-/* NOTICE ***** @import rule will be delete from sass, in near future. think about using @use rule and change to modern preprosesser. */
-/* ********************* <section id="title"> */
-#title { display: flex; flex-direction: row; justify-content: center; align-items: center; padding: 5%; }
+main {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  max-height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+  z-index: 2;
+}
 
-#title div { position: relative; top: 0; left: 0; width: 49%; height: 60vh; overflow: hidden; z-index: 4; }
+section {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  z-index: 3;
+}
+section p {
+  font-size: 0.9rem;
+  font-weight: 100;
+}
 
-#title h2, #title p { color: #fff; }
-
-#title div + div { padding-left: 5%; }
-
-#title div + div h2 { font-size: 1.2rem; font-weight: normal; letter-spacing: 0.1rem; margin-bottom: 1rem; }
-
-#title div + div::before, #title div + div::after { display: block; position: absolute; top: 0; left: 0; width: 1px; background-color: transparent; content: " "; animation-name: titleSectionBorder; animation-iteration-count: infinite; z-index: 100; }
-
-#title div + div::before { height: 90%; animation-duration: 10s; }
-
-#title div + div::after { animation-delay: 5s; height: 90%; animation-duration: 10s; }
-
-@keyframes titleSectionBorder { 0% { transform: translateY(-100%);
-    background-color: #fff; }
-  100% { transform: translateY(110%); } }
-
-h1 { color: #fff; font-weight: 100; letter-spacing: 0.05rem; text-align: center; }
-
-h1 svg { display: block; transform: scale(0.5); fill: #707c7e; }
-
-h1 svg polygon, h1 svg path { animation-name: titleAnm; animation-duration: 25s; animation-iteration-count: infinite; }
-
-@keyframes titleAnm { 0% { fill: #fff; }
-  30% { fill: #a6edbc; }
-  50% { fill: #5fadf2; }
-  60% { fill: #cbb3c9; }
-  80% { fill: #ef95ab; }
-  100% { fill: #fff; } }
-
-/* ********************* <section id="corporatesite2020"> */
-#corporatesite2020 { background-color: #0c243f; overflow: hidden; }
-
-#corporatesite2020 div { position: absolute; top: 20%; left: 5%; }
-
-#corporatesite2020 div h2 { color: #fcfaf2; font-size: 12rem; font-weight: 900; line-height: 9rem; margin-bottom: 2rem; }
-
-#corporatesite2020 div p { position: relative; top: 0; left: 0; color: #fcfaf2; padding-left: 5%; line-height: 5rem; }
-
-#corporatesite2020 div p a { position: absolute; top: 0; left: 50%; display: inline-block; color: #d99b75; font-size: 5rem; font-weight: 100; outline: none; overflow: hidden; text-align: right; text-decoration: none; }
-
-#corporatesite2020 div p a::before { position: absolute; bottom: 0; left: -100%; width: 100%; height: 1px; background-color: #d99b75; content: " "; transition-property: all; transition-duration: 500ms; transition-timing-function: ease-in; }
-
-#corporatesite2020 div p a:hover::before { left: 0; }
-
-/* ********************* <section id="engineers_demo_01"> */
-#engineers_demo_01 { display: flex; flex-direction: row-reverse; background-color: #fff; }
-
-#engineers_demo_01 .title { width: 70%; height: 100vh; background-size: auto auto; background-color: white; background-image: repeating-linear-gradient(50deg, transparent, transparent 10px, #f284c2 10px, #f284c2 60px); padding: 4%; }
-
-#engineers_demo_01 .title h2 { color: #fff; font-size: 9.2rem; line-height: 8rem; }
-
-#engineers_demo_01 .title h3 { color: #444; font-size: 2rem; font-weight: lighter; letter-spacing: 1px; line-height: 20rem; text-align: center; }
-
-#engineers_demo_01 .link { width: 30%; height: 100vh; background-color: #fff; padding: 2%; }
-
-#engineers_demo_01 .link article { display: grid; place-items: center; width: 100%; padding: 5%; }
-
-#engineers_demo_01 .link article h3 { color: #555; font-size: 2rem; line-height: 2.5rem; }
-
-#engineers_demo_01 .link article p { color: #555; font-size: 0.9rem; line-height: 1.1rem; }
-
-#engineers_demo_01 .link div { width: 100%; height: 40%; overflow: hidden; padding: 8% 0; text-align: center; }
-
-#engineers_demo_01 .link div svg { animation-name: EDarrowslide; animation-duration: 4s; animation-iteration-count: infinite; margin: 0 auto; }
-
-@keyframes EDarrowslide { 0% { transform: translateY(5%) scale(1.5); }
-  100% { transform: translateY(340%) scale(1.1); } }
-
-#engineers_demo_01 .link p { display: grid; place-items: center; position: relative; top: 0; left: 0; width: 100%; line-height: normal; }
-
-#engineers_demo_01 .link p a { display: inline-block; position: relative; top: 0; left: 0; width: 80%; height: 3rem; background-color: transparent; line-height: 3rem; outline: none; overflow: hidden; padding: 0; text-align: center; text-decoration: none; /*        &:hover { //background-color: #e472cb; //border-radius: 50%; }*/ }
-
-#engineers_demo_01 .link p a::before, #engineers_demo_01 .link p a::after { display: block; position: absolute; background-color: #e472cb; content: " "; transition: all 0.2s cubic-bezier(0.76, 0, 0.24, 1); top: 0; }
-
-#engineers_demo_01 .link p a::before { left: 0; width: 0; height: 1px; }
-
-#engineers_demo_01 .link p a::after { right: 0; width: 1px; height: 0; transition-delay: .2s; }
-
-#engineers_demo_01 .link p a span { position: relative; top: 0; left: 0; display: inline-block; width: 100%; height: 100%; color: #e472cb; font-weight: 300; font-size: 2rem; letter-spacing: 1px; margin-top: -1px; vertical-align: middle; }
-
-#engineers_demo_01 .link p a span::before, #engineers_demo_01 .link p a span::after { display: block; position: absolute; background-color: #e472cb; content: " "; transition: all 0.2s cubic-bezier(0.76, 0, 0.24, 1); }
-
-#engineers_demo_01 .link p a span::before { left: 0; bottom: 0; width: 1px; height: 0; transition-delay: .6s; }
-
-#engineers_demo_01 .link p a span::after { right: 0; bottom: 1px; width: 0; height: 1px; transition-delay: .4s; }
-
-#engineers_demo_01 .link p a:hover::before { width: 100%; }
-
-#engineers_demo_01 .link p a:hover::after { height: 100%; }
-
-#engineers_demo_01 .link p a:hover span::before { height: 100%; }
-
-#engineers_demo_01 .link p a:hover span::after { width: 100%; }
-
-/* ************** id="omsby" */
-#omsby { background-color: #f8e9e3; }
-
-#omsby h2 { font-size: 5rem; text-align: center; }
-
-#omsby p { text-align: center; }
+section:nth-of-type(even) {
+  background-color: #5fadf2;
+}
